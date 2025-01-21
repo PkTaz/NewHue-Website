@@ -1,0 +1,159 @@
+/* Site Footer */
+.site-footer {
+    background-color: rgba(38, 73, 70, 0.9); /* Slightly darker for a modern look */
+    color: rgb(247, 230, 161);
+    padding: 20px 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    gap: 20px;
+}
+
+/* Footer Logo */
+.footer-img {
+    width: 20vh;
+    max-width: 100%;
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: #f5ad58;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: #f5ad58;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Quick Links */
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: rgb(247, 230, 161);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+.footer-section ul li a:hover {
+    color: #f5ad58;
+    transform: translateX(5px);
+}
+
+/* Contact Section Icons */
+.footer-section.contact p {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-section.contact {
+    max-width: 400px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(38, 73, 70, 1);
+    color: rgb(247, 230, 161);
+    font-size: 14px;
+    border-top: 1px solid rgba(247, 230, 161, 0.2);
+}
+
+/* Icon Styling */
+.icon {
+    color: #f5ad58;
+    font-size: 18px; /* Adjust size to match text */
+}
+
+
+
+
+
+/* Mobile Styles */
+
+@media (max-width: 1000px) { 
+    .footer-img {
+        margin-right: -5vh;
+    }
+
+    .footer-container {
+        margin-left: -2vh;
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-img {
+        margin: auto;
+    }
+
+    .footer-container {
+        flex-direction: row; /* Align sections horizontally */
+        justify-content: space-between; /* Add space between sections */
+        gap: 20px; /* Adjust space between the sections */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    .footer-section {
+        text-align: left; /* Align text to the left */
+        max-width: 100%; /* Limit the width of each section */
+        margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
+    }
+
+    .footer-section.contact,
+    .footer-section.links {
+        margin-bottom: 0; /* Remove bottom margin for these specific sections */
+    }
+
+    .footer-section ul li a {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .footer-section h3 {
+        font-size: 18px; /* Adjust heading size */
+    }
+}

@@ -1,0 +1,421 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(38, 73, 70, 1); /* Dark green on scroll */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  position: fixed;
+}
+
+.navbar.scrolled {
+  
+  background: linear-gradient(135deg, rgba(38, 73, 70, 0.2), rgba(0, 0, 0, 0.7)); /* Green to black gradient */
+  padding: -10px 20px; /* Smaller padding when scrolled */
+  height: 15vh;
+  
+}
+
+.logo-img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: width 0.3s ease; /* Smooth transition for logo resizing */
+}
+
+.logo-img.small {
+  width: 145px; /* Smaller logo size on scroll */
+}
+
+
+
+/* Header Text Styling */
+.header-text {
+  display: flex;
+  align-items: center;
+  color: #f5ad58;  
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 34px; 
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: absolute;
+  padding: 0 20px;
+  animation: slideInFromRight 1s ease-out forwards;
+  margin-left: 10rem;
+  margin-top: -9vh;
+}
+
+/* Spin Animation for "+" symbol */
+.spin-plus {
+  display: inline-block;
+  animation: spin 2s ease-in-out 1;
+  transform-origin: center;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slide In Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%); /* Start from left */
+  }
+  100% {
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%); /* Start from right */
+  }
+  100% {
+    transform: translateX(0); /* End at original position */
+  }
+}
+
+/* Navigation Styling */
+.nav-links ul {
+  font-size: 2vh;
+  margin-top: -10%;
+  display: flex;
+  list-style: none;
+  opacity: 0; /* Make them invisible initially */
+  transform: translateY(-100%); /* Move them off-screen initially */
+  animation: slideDown 1s ease-out forwards; /* Slide animation */
+}
+
+.nav-links li {
+  margin-left: 30px;
+  position: relative; /* Needed for dropdown */
+}
+
+/* Adding bars in between nav items */
+.nav-links li::after {
+  font-size: 2vh;
+  content: '|';
+  color: #f5ad58; /* Gold color for the bar */
+  margin-left: 30px;
+  padding-left: 10px;
+  position: absolute;
+  right: -35px; /* Position bars outside the link */
+  top: 40%;
+  transform: translateY(-50%);
+  width: 25px; /* Fix the width of the bars */
+  display: inline-block; /* Ensures the bar is consistent and separate from the hover effect */
+}
+
+/* Remove bar after last item */
+.nav-links li:last-child::after {
+  content: none;
+}
+
+/* Dropdown menu for Projects and Gallery */
+/* Updated Dropdown Menu Styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2f2f2f; /* Darker gray for contrast */
+  min-width: 180px; /* Slightly wider for more content */
+  z-index: 999;
+  top: 110%;
+  left: 0;
+  border-radius: 15px; /* Rounded corners for a softer look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+  opacity: 0;
+  transform: translateY(-20px); /* Start slightly higher */
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+/* Dropdown Links Styling */
+.dropdown-content a {
+  color: #f5ad58; /* Golden color for text */
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  border-radius: 10px; /* Rounded corners for each item */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5ad58; /* Hover background color */
+  color: #fff; /* White text when hovered */
+  transform: translateX(5px); /* Slight movement for interactive effect */
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Bring dropdown into full view */
+}
+
+/* Ensure that the nav-item link is still clickable by increasing its z-index */
+.nav-item {
+  text-decoration: none;
+  font-size: 2vh;
+  font-weight: 600;
+  color: white; /* Gold for text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  z-index: 2; /* Bring the link on top of the dropdown */
+}
+
+/* Underline and white text effect on hover */
+.nav-item:hover {
+  color: #f5ad58; /* White text on hover */
+  text-decoration: underline;
+  text-decoration-color: #f5ad58;
+  text-decoration-thickness: 4px;
+  text-decoration-style: solid;
+}
+
+.request-work-button {
+  background-color: #f5ad58;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.request-work-button:hover {
+  background-color: #d1d1d1;
+  color: #333;
+}
+
+/* Dropdown hover effect */
+.nav-links li:hover .dropdown-content {
+  display: block;
+}
+
+/* Keyframes for sliding the nav links down */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); /* Start off-screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in original position */
+  }
+}
+
+.hamburger-menu {
+  display: none; /* Default: hidden */
+}
+
+.hamburger-menu .bar {
+  display: none;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu .nav-item {
+  padding: 10px 0;
+}
+@media (max-width: 1630px) {
+  .header-text {
+    position: absolute;
+    margin-top: -10.5vh;
+    margin-left: 17vh;
+    font-size: 28px;
+    white-space: nowrap;
+  }
+
+}
+@media (max-width: 1520px) {
+  .header-text {
+    position: absolute;
+    margin-top: -11vh;
+    margin-left: 17vh;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1340px) {
+  .header-text {
+    position: absolute;
+    margin-top: 11vh;
+    margin-left: 17vh;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .header-text {
+    margin-top: 7.25vh;
+    margin-left: 8vh;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+ .nav-item .dropdown {
+  margin-top: 10px;
+  }
+
+  .nav-links li::after {
+    display: none;
+  }
+
+  .nav-item {
+    margin-top: 0.20vh;
+    font-size: 1rem;
+  }
+
+
+  .desktop-menu {
+    margin-left: -20vh;
+  }
+
+  .request-work-button {
+    padding: 5px 40px; /* Increased padding for more background area */
+    font-size: 1rem;  /* Slightly larger text for better visibility */
+    border-radius: 40px; /* Adjusted for proportional button shape */
+  }
+
+  .logo-img {
+    width: 125px;
+  }
+
+  .logo {
+    margin-left: -4vh;
+  }
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 828px) {
+
+  .desktop-menu {
+    display: none !important;
+  }
+
+  .logo-img.small {
+    width: 100px; /* Smaller logo size on scroll */
+  }
+  
+  .dropdown-content {
+    left: -10px;
+    top: 110px;
+  }
+
+  .header-text {
+    margin-left: 6vh;
+    margin-top: 1vh;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .hamburger-menu {
+    display: none; /* Default: hidden */
+    position: absolute;
+    right: 1vh;
+    top: 1vh;
+    cursor: pointer;
+    z-index: 200;
+  }
+  
+  .hamburger-menu .bar {
+    display: none;
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+  
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, rgba(38, 73, 70, 0.6), rgba(0, 0, 0, 0.8)); /* Green to black gradient */
+    position: absolute;
+    top: 160px;
+    right: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 100;
+  }
+
+
+  .navbar {
+    width: 100%;
+    position: fixed;
+  }
+
+  .logo-img {
+    width: 100px;
+  }
+
+  .logo {
+    margin-left: -4vh;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hamburger-menu .bar {
+    display: block;
+  }
+
+ .request-work-button{
+    padding: 150px;
+    font-size: 1rem;  /* Slightly larger text for better visibility */
+    border-radius: 20px; /* Adjusted for proportional button shape */
+  }
+}
+
+@media (max-width: 400px) { 
+  .header-text{
+    font-size: 1.25vh;
+    margin-left: 8vh;
+  }
+}

@@ -1,0 +1,123 @@
+.position {
+    padding-top: 220px;
+    padding-bottom: 120px;
+}
+
+
+.form-container {
+    background-color: rgba(38, 73, 70, 1.0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    padding: 20px;
+    transform: translateY(50px);
+    animation: fadeIn 1s forwards;
+    max-width: 60vh;
+    margin: auto;
+    box-shadow: 0 28px 22px -14px #f5ad58; /* Bottom shadow */
+}
+
+/* Request form */
+.request-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Heading styling */
+.request-form h2 {
+    font-family: "Josefin Sans", sans-serif;
+    text-align: center;
+    color: #f5ad58;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+.request-form label {
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 20px;
+    color: rgb(247, 230, 161);
+}
+
+/* Input and textarea styling */
+.request-form input,
+.request-form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #f5ad58;
+    border-radius: 5px;
+    background-color: rgba(247, 230, 161, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Button styling */
+.request-form button {
+    margin-top: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5ad58;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.request-form button:hover {
+    background-color: #e69b4e;
+}
+
+/* Animation for the fade-in effect */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens smaller than 600px (mobile) */
+@media (max-width: 768px) {
+
+    .position {
+        padding-top: 16vh;
+    }
+
+    .form-container {
+        margin-top: 0;
+        max-width: 40vh;
+    }
+
+    .request-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .request-form input,
+    .request-form textarea,
+    .request-form button {
+        font-size: 0.9rem;
+    }
+}
+
+/* For screens between 600px and 1024px (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .form-container {
+        padding-top: 20px;
+    }
+
+
+    .request-form h2 {
+        font-size: 1.75rem;
+    }
+
+    .request-form input,
+    .request-form textarea,
+    .request-form button {
+        font-size: 1rem;
+    }
+}

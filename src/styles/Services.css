@@ -1,0 +1,171 @@
+/* General Styles for Section */
+.advertisers-service-sec {
+    font-size: 3vh;
+    text-align: center; /* Center-align the title */
+    background: rgba(0, 0, 0, 0.2);
+    padding-bottom: 100px;
+}
+
+.advertisers-service-sec span {
+    color: #f5ad58;
+}
+
+.advertisers-service-sec h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: rgba(38, 73, 70, 0.8);
+}
+
+.advertisers-service-sec .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    gap: 2em; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid */
+    justify-items: center; /* Center-align individual grid items */
+}
+
+.advertisers-service-sec .service-card {
+    width: 100%;
+    padding: 2em 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+    background: #ffffff;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.advertisers-service-sec .service-card::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f5ad58, rgba(38, 73, 70, 0.8));
+    position: absolute;
+    left: 0;
+    top: -98%;
+    z-index: -2;
+    transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
+}
+
+.advertisers-service-sec h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: rgba(38, 73, 70, 0.8);
+    margin: 1em 0;
+    z-index: 3;
+}
+
+.advertisers-service-sec p {
+    color: rgba(38, 73, 70, 0.8);
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    z-index: 3;
+}
+
+.advertisers-service-sec .icon-wrapper {
+    background-color: #f5ad58;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.advertisers-service-sec .service-card:hover:after {
+    top: 0%;
+}
+
+.advertisers-service-sec .service-card .icon-wrapper {
+    background-color: #ffffff;
+    color: #f5ad58;
+}
+
+.advertisers-service-sec .service-card:hover .icon-wrapper {
+    color: rgba(38, 73, 70, 0.8);
+}
+
+.advertisers-service-sec .service-card:hover h3 {
+    color: #ffffff;
+}
+
+.advertisers-service-sec .service-card:hover p {
+    color: rgba(247, 230, 161, 0.9);
+}
+
+@media (max-width: 1000px) {
+    .advertisers-service-sec .container {
+        width: 90%;
+    }
+}
+
+/* Mobile-responsive styles */
+@media (max-width: 768px) {
+    /* Adjust the grid to 2 columns on medium-sized screens */
+    .advertisers-service-sec .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+        gap: 1.5em;
+        width: 80%;
+    }
+
+    /* Service card adjustments for smaller screens */
+    .service-card {
+        padding: 1.5em 1.2em;
+        font-size: 14px;
+    }
+
+    /* Adjust the icon size */
+    .service-card .icon-wrapper {
+        font-size: 24px;
+        height: 2.2em;
+        width: 2.2em;
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust the grid to 1 column on smaller screens */
+    .advertisers-service-sec .container {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+        gap: 1em;
+    }
+
+    /* Reduce the size of cards */
+    .service-card {
+        padding: 1.2em;
+        font-size: 13px;
+    }
+
+    /* Smaller icons */
+    .service-card .icon-wrapper {
+        font-size: 20px;
+        height: 2em;
+        width: 2em;
+    }
+
+    /* Further adjust the font size of headings and text */
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.8rem;
+    }
+}
